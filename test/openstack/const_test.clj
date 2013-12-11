@@ -72,6 +72,6 @@
   (is (= "/servers"
          const/server-path)))
 
-(deftest test-server-detail-path
+(deftest test-servers-detail-path
   (is (= "/servers/detail"
-         const/server-detail-path)))
+         const/servers-detail-path)))

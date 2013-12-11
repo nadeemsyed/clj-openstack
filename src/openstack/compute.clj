@@ -19,9 +19,9 @@
       {:content-type :json
        :headers {const/x-auth-token (identity/get-token identity-response)}})))
 
-(defn get-server-list [identity-response region]
+(defn get-servers-details-list [identity-response region]
   (let [base-url (services/get-cloud-servers-region-url identity-response region)]
     (http/get
-      (str base-url const/server-detail-path)
+      (str base-url const/servers-detail-path)
       {:accept :json
        :headers {const/x-auth-token (identity/get-token identity-response)}})))

@@ -28,6 +28,6 @@
     (with-redefs [services/get-cloud-servers-region-url (fn [identity-response region] "url")
                   http/get (fn [url data] mock-response)
                   identity/get-token (fn [identity-response] "token")]
-      (let [response (compute/get-server-list {} :ord)]
+      (let [response (compute/get-servers-details-list {} :ord)]
         (is = (response
                mock-response))))))
