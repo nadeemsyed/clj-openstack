@@ -7,10 +7,8 @@
 
 (deftest get-new-server-payload-test
   (let [payload (compute/get-new-server-payload "server-test" "id-test" "flav-test")]
-    (is (= (payload :body)
-           "{\"server\":{\"name\":\"server-test\",\"imageRef\":\"id-test\",\"flavorRef\":\"flav-test\"}}"))
-    (is (= (payload :content-type)
-           :json))))
+    (is (= payload
+           "{\"server\":{\"name\":\"server-test\",\"imageRef\":\"id-test\",\"flavorRef\":\"flav-test\"}}"))))
 
 ;simply ensures that the response from the POST is returned
 (deftest create-server-test
